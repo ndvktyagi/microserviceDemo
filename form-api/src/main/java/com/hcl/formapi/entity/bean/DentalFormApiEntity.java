@@ -59,6 +59,9 @@ public class DentalFormApiEntity implements Serializable {
 	@Column(name = "EMPLOYEE_ID_NUM")
 	private String strEmployeeIDNumber;	
 	
+	@Column(name = "EMPLOYEE_SAP_CODE")
+	private String strEmployeeSapCode;
+	
 	@Column(name = "EMPLOYEE_EMAIL")
 	private String strEmployeeEmailId;
 	

@@ -1,5 +1,6 @@
 package com.hcl.formapi.serviceimpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.BeanUtils;
@@ -18,8 +19,16 @@ public class DentalFormApiServiceImpl implements DentalFormApiService {
 	private DentalFormApiRepository dentalFormApiRepository;
 
 	@Override
-	public List<DentalFormApiEntity> getAllPatientDtls() {
-		return (List<DentalFormApiEntity>) dentalFormApiRepository.findAll();
+	public List<DentalFormApiModel> getAllPatientDtls() {
+		List<DentalFormApiEntity> entityList= (List<DentalFormApiEntity>) dentalFormApiRepository.findAll();
+		List<DentalFormApiModel> modelList= new ArrayList<>();
+		for(DentalFormApiEntity entity:entityList) {
+			DentalFormApiModel model = new DentalFormApiModel();
+			BeanUtils.copyProperties(entity, model);
+			modelList.add(model);
+		}
+		return modelList;
+		
 	}
 
 	@Override

@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class DentalFormApiModel {
 	
+	private Long strPatientId;
 	private String strPatientName;
 	private String strPatientGender;
 	private String strPatientRelationship;
@@ -17,13 +18,19 @@ public class DentalFormApiModel {
 	private String strEmployeeIDType;
 	private String strEmployeeIDNumber;	
 	private String strEmployeeEmailId;
+	private String strEmployeeSapCode;
 	private Long lngEmployeeCurrentPinCode;	
 	private Long lngEmployeePerPinCode;
 	private Long lngEmployeeMobileNo;	
 	private Date dtEmployeeDateOfBirth;
 	private Date dtPatientDateOfBirth;
 	
-	
+	public Long getStrPatientId() {
+		return strPatientId;
+	}
+	public void setStrPatientId(Long strPatientId) {
+		this.strPatientId = strPatientId;
+	}
 	public String getStrPatientName() {
 		return strPatientName;
 	}
@@ -101,6 +108,12 @@ public class DentalFormApiModel {
 	}
 	public void setStrEmployeeEmailId(String strEmployeeEmailId) {
 		this.strEmployeeEmailId = strEmployeeEmailId;
+	}	
+	public String getStrEmployeeSapCode() {
+		return strEmployeeSapCode;
+	}
+	public void setStrEmployeeSapCode(String strEmployeeSapCode) {
+		this.strEmployeeSapCode = strEmployeeSapCode;
 	}
 	public Long getLngEmployeeCurrentPinCode() {
 		return lngEmployeeCurrentPinCode;
