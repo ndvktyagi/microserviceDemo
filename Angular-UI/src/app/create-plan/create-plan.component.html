@@ -1,0 +1,86 @@
+<h3 style="text-align: center;">Plan Creation</h3>
+<div class="container container-fluid">
+<p-fieldset legend="Plan Creation" [toggleable]="true">
+    <div class="row padding-5">
+        <div class="col-lg-2" style="text-align: left">
+            <div class="ui-inputgroup">
+                <label>From : </label>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="ui-inputgroup" style="text-align: left">
+                <span class="ui-inputgroup-addon">
+                    <i class="fa fa-calendar"></i>
+                </span>
+                <p-calendar [(ngModel)]="planBO.dtplanfromDate" placeholder="From Date"></p-calendar>
+            </div>
+        </div>
+        <div class="col-lg-2" style="text-align: left">
+            <div class="ui-inputgroup">
+                <label>To : </label>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="ui-inputgroup" style="text-align: left">
+                <span class="ui-inputgroup-addon">
+                    <i class="fa fa-calendar"></i>
+                </span>
+               <p-calendar [(ngModel)]="planBO.dtplantoDate" placeholder="To Date"></p-calendar>
+            </div>
+        </div>
+    </div>
+    <div class="row padding-5">
+        <div class="col-lg-2" style="text-align: left">
+            <div class="ui-inputgroup">
+                <label>Plan ID :</label>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="ui-inputgroup" style="text-align: left">
+                <span class="ui-inputgroup-addon"></span>
+                <input type="text" [(ngModel)]="planBO.strPlanid" pInputText placeholder="Plan ID">
+            </div>
+        </div>
+        <div class="col-lg-2" style="text-align: left">
+            <div class="ui-inputgroup">
+                <label>Plan Name :</label>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="ui-inputgroup" style="text-align: left">
+                <span class="ui-inputgroup-addon"></span>
+                <input type="text" [(ngModel)]="planBO.strplanName" pInputText placeholder="Plan Name">
+            </div>
+        </div>
+    </div>
+    <div class="row padding-5">
+        <div class="col-lg-2" style="text-align: left">
+            <div class="ui-inputgroup">
+                <label>Plan Type : </label>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="ui-inputgroup" style="text-align: left">
+                <span class="ui-inputgroup-addon"></span>
+                <p-dropdown [options]="planIdtype" [(ngModel)]="planBO.strplanType"></p-dropdown>
+            </div>
+        </div>
+        <div class="col-lg-2" style="text-align: left">
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <div class="row padding-5">
+        <div class="col-lg-3" style="text-align: center"></div>
+        <div class="col-lg-6" style="text-align: center">
+            <div style="padding: 20px;">
+                <p-button (click)="save()" label="Save" styleClass="btn btn-primary"></p-button>
+                <span style="padding: 3%"></span>
+                <p-button (click)="clear()" label="Clear" styleClass="btn btn-primary"></p-button>
+            </div>
+        </div>
+        <div class="col-lg-3" style="text-align: center">
+        </div>
+    </div>
+  </p-fieldset>
+  </div>

@@ -1,0 +1,62 @@
+<h3 style="text-align: center;">Dental Claim Records</h3>
+<div class="container container-fluid" style="padding: 2%">
+    <p-table [columns]="cols" [value]="dentalDatas" selectionMode="single" [(selection)]="selecteddentalData" (onRowSelect)="onRowSelect($event)"
+        [paginator]="true" [rows]="15">
+        <ng-template pTemplate="caption">
+            Dental Claim Records
+        </ng-template>
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                    {{col.header}}
+                    <p-sortIcon [field]="col.field"></p-sortIcon>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr [pSelectableRow]="rowData">
+                <td *ngFor="let col of columns" style="text-align: center;">
+                    <span *ngIf="checkDate(col.field)" class="text-wordwrapcss" >{{rowData[col.field] | date : 'M/d/yyyy'}}</span>
+                    <span *ngIf="!(checkDate(col.field))" class="text-wordwrapcss" >{{rowData[col.field]}}</span>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+<p-dialog header="Dental Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [width]="300">
+    <div class="ui-g ui-fluid" *ngIf="dentalDatas">
+        <app-dental-claim></app-dental-claim>
+
+        <div class="ui-g-12">
+            <div class="ui-g-4">
+                <label for="vin">Patient ID</label>
+            </div>
+            <div class="ui-g-8">
+                <input pInputText id="strPatientId" [(ngModel)]="dentalDatas.strPatientId" />
+            </div>
+        </div>
+        <div class="ui-g-12">
+            <div class="ui-g-4">
+                <label for="year">Patient Name</label>
+            </div>
+            <div class="ui-g-8">
+                <input pInputText id="strPatientName" [(ngModel)]="dentalDatas.strPatientName" />
+            </div>
+        </div>
+        <div class="ui-g-12">
+            <div class="ui-g-4">
+                <label for="brand">Patient Name</label>
+            </div>
+            <div class="ui-g-8">
+                <input type="checkbox" id="strPatientName" [(ngModel)]="dentalDatas.strPatientName" />
+            </div>
+        </div>
+
+    </div>
+    <p-footer>
+        <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button type="button"  pButton icon="fa fa-close" (click)="delete()" label="Delete"></button>
+            <button type="button" pButton icon="fa fa-check" (click)="save()" label="Update"></button>
+        </div>
+    </p-footer>
+</p-dialog>

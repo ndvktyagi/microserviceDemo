@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="container" style="height: 90%;">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-lg-6" style="padding-left: 50px;">
+        <h3>Register</h3>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <span class="ui-float-label">
+              <input id="float-input" type="text" size="30" pInputText required>
+              <label for="float-input">Name</label>
+            </span>
+          </div>
+          <div class="form-group">
+            <span class="ui-float-label">
+              <input id="float-input" type="text" size="30" pInputText required>
+              <label for="float-input">Username</label>
+            </span>
+          </div>
+          <div class="form-group">
+            <span class="ui-float-label">
+              <input id="float-input" type="password" size="30" pPassword required>
+              <label for="float-input">Password</label>
+            </span>
+          </div>
+          <div class="form-group">
+            <span class="ui-float-label">
+              <input id="float-input" type="password" size="30" pPassword required>
+              <label for="float-input">Confirm Password</label>
+            </span>
+          </div>
+          <div class="form-group">
+            <button [routerLink]="['/home']" class="btn btn-primary">Register</button>
+            <a [routerLink]="['/login-page']" class="btn btn-link">Login Here</a>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-6" style="text-align: justify;">
+        <h4>Retirement Planning</h4>
+        <p> Retirement planning, in a financial context, refers to the allocation of savings or revenue for retirement. The
+          goal of retirement planning is to achieve financial independence.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

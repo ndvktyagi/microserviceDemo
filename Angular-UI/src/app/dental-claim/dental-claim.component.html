@@ -1,0 +1,299 @@
+<h3 style="text-align: center;">Dental Claim Form</h3>
+<div class="container container-fluid">
+    <p-fieldset legend="Paintent Detail(To be Filled by Employer)" [toggleable]="true">
+        <div class="row padding-5">
+            <div class="col-lg-2" style="text-align: left">
+                <div class="ui-inputgroup">
+                    <label>Patient’s Full Name</label>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ui-inputgroup" style="text-align: left">
+                    <span class="ui-inputgroup-addon">
+                        <i class="fa fa-user"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="dentalBO.strPatientName" pInputText placeholder="Patient’s Full Name">
+                </div>
+            </div>
+            <div class="col-lg-2" style="text-align: left">
+                <div class="ui-inputgroup">
+                    <label>Relationship to Employee</label>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ui-inputgroup" style="text-align: left">
+                    <label>Self&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <p-radioButton name="RelationshipEmployee" value="Self" [(ngModel)]="dentalBO.strPatientRelationship"></p-radioButton>
+                    <label>&nbsp;&nbsp;&nbsp;&nbsp;Spouse&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <p-radioButton name="RelationshipEmployee" value="Spouse" [(ngModel)]="dentalBO.strPatientRelationship"></p-radioButton>
+                    <label>&nbsp;&nbsp;&nbsp;&nbsp;Child&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <p-radioButton name="RelationshipEmployee" value="Child" [(ngModel)]="dentalBO.strPatientRelationship"></p-radioButton>
+                    <label>&nbsp;&nbsp;&nbsp;&nbsp;Other&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <p-radioButton name="RelationshipEmployee" value="Other" [(ngModel)]="dentalBO.strPatientRelationship"></p-radioButton>
+                </div>
+            </div>
+        </div>
+        <div class="row padding-5">
+            <div class="col-lg-2" style="text-align: left">
+                <div class="ui-inputgroup">
+                    <label>Patient birthdate</label>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ui-inputgroup" style="text-align: left">
+                    <span class="ui-inputgroup-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                    <p-calendar [(ngModel)]="dentalBO.dtPatientDateOfBirth"></p-calendar>
+                </div>
+            </div>
+            <div class="col-lg-2" style="text-align: left">
+                <div class="ui-inputgroup">
+                    <label>Sex</label>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ui-inputgroup" style="text-align: left">
+                    <label>Male&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <p-radioButton name="groupGender" value="M" [(ngModel)]="dentalBO.strPatientGender"></p-radioButton>
+                    <label>&nbsp;&nbsp;&nbsp;&nbsp;Female&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <p-radioButton name="groupGender" value="F" [(ngModel)]="dentalBO.strPatientGender"></p-radioButton>
+                </div>
+            </div>
+        </div>
+    </p-fieldset>
+    <p-fieldset legend="Employee Details" [toggleable]="true">
+        <div>
+            <div class="row padding-5">
+                <div class="col-lg-2" style="text-align: left">
+                    <div class="ui-inputgroup">
+                        <label>Employee’s Full name</label>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ui-inputgroup" style="text-align: left">
+                        <div class="ui-inputgroup" style="text-align: left">
+                            <span class="ui-inputgroup-addon"></span>
+                            <input type="text" [(ngModel)]="dentalBO.strEmployeeName" pInputText placeholder="Employee’s Full name">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2" style="text-align: left">
+                    <div class="ui-inputgroup">
+                        <label>Employee’s identification number</label>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ui-inputgroup" style="text-align: left">
+                        <div class="ui-inputgroup" style="text-align: left">
+                            <span class="ui-inputgroup-addon"></span>
+                            <input type="text" [(ngModel)]="dentalBO.strEmployeeSapCode" pInputText placeholder="identification number">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row padding-5">
+                <div class="col-lg-2" style="text-align: left">
+                    <div class="ui-inputgroup">
+                        <label>Employee’s ID Type</label>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ui-inputgroup" style="text-align: left">
+                        <span class="ui-inputgroup-addon"></span>
+                        <p-dropdown [options]="idtype" [(ngModel)]="dentalBO.strEmployeeIDType"></p-dropdown>
+                    </div>
+                </div>
+                <div class="col-lg-2" style="text-align: left">
+                    <div class="ui-inputgroup">
+                        <label>Employee’s Email ID</label>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ui-inputgroup" style="text-align: left">
+                        <div class="ui-inputgroup" style="text-align: left">
+                            <span class="ui-inputgroup-addon"></span>
+                            <input type="text" [(ngModel)]="dentalBO.strEmployeeEmailId" pInputText placeholder="Employee’s Email ID">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row padding-5">
+                <div class="col-lg-2" style="text-align: left">
+                    <div class="ui-inputgroup">
+                        <label>Employee’s ID Number</label>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ui-inputgroup" style="text-align: left">
+                        <div class="ui-inputgroup" style="text-align: left">
+                            <span class="ui-inputgroup-addon"></span>
+                            <input type="text" [(ngModel)]="dentalBO.strEmployeeIDNumber" pInputText placeholder="Employee’s ID Number">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2" style="text-align: left">
+                    <div class="ui-inputgroup">
+                        <label>Employee’s Mobile Number</label>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ui-inputgroup" style="text-align: left">
+                        <div class="ui-inputgroup" style="text-align: left">
+                            <span class="ui-inputgroup-addon"></span>
+                            <input type="text" [(ngModel)]="dentalBO.lngEmployeeMobileNo" pInputText placeholder="Mobile Number">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row padding-5">
+                <div class="col-lg-2" style="text-align: left">
+                    <div class="ui-inputgroup">
+                        <label>Employee’s DOB</label>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ui-inputgroup" style="text-align: left">
+                        <span class="ui-inputgroup-addon">
+                            <i class="fa fa-calendar"></i>
+                        </span>
+                        <p-calendar [(ngModel)]="dentalBO.dtEmployeeDateOfBirth"></p-calendar>
+                    </div>
+                </div>
+                <div class="col-lg-2" style="text-align: left">
+                </div>
+                <div class="col-lg-4">
+
+                </div>
+            </div>
+        </div>
+    </p-fieldset>
+    <p-fieldset legend="Employee Address" [toggleable]="true">
+
+        <div class="row padding-5">
+            <div class="col-lg-2" style="text-align: left">
+                <div class="ui-inputgroup">
+                    <label>Employee’s Current Address</label>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ui-inputgroup" style="text-align: left">
+                    <span class="ui-inputgroup-addon">
+                        <i class="fa fa-address-book-o"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="dentalBO.strEmployeeCurrentAdd1" pInputText placeholder="House Number">
+                </div>
+            </div>
+            <div class="col-lg-2" style="text-align: left">
+                <div class="ui-inputgroup">
+                    <label>Employee’s Permanent Address</label>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ui-inputgroup" style="text-align: left">
+                    <span class="ui-inputgroup-addon">
+                        <i class="fa fa-address-book-o"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="dentalBO.strEmployeePerAdd1" pInputText placeholder="House Number">
+                </div>
+            </div>
+        </div>
+
+        <div class="row padding-5">
+            <div class="col-lg-2" style="text-align: left">
+                <div class="ui-inputgroup">
+                    <label>Employee's Current City</label>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ui-inputgroup" style="text-align: left">
+                    <span class="ui-inputgroup-addon">
+                        <i class="fa fa-address-book-o"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="dentalBO.strEmployeeCurrentAdd2" pInputText placeholder="Current City">
+                </div>
+            </div>
+            <div class="col-lg-2" style="text-align: left">
+                <div class="ui-inputgroup">
+                    <label>Employee's Permanent City</label>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ui-inputgroup" style="text-align: left">
+                    <span class="ui-inputgroup-addon">
+                        <i class="fa fa-address-book-o"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="dentalBO.strEmployeePerAdd2" pInputText placeholder="Permanent City">
+                </div>
+            </div>
+        </div>
+        <div class="row padding-5">
+            <div class="col-lg-2" style="text-align: left">
+                <div class="ui-inputgroup">
+                    <label>Employee's Current State</label>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ui-inputgroup" style="text-align: left">
+                    <span class="ui-inputgroup-addon">
+                        <i class="fa fa-address-book-o"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="dentalBO.strEmployeeCurrentState" pInputText placeholder="Current State">
+                </div>
+            </div>
+            <div class="col-lg-2" style="text-align: left">
+                <div class="ui-inputgroup">
+                    <label>Employee's Permanent State</label>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ui-inputgroup" style="text-align: left">
+                    <span class="ui-inputgroup-addon">
+                        <i class="fa fa-address-book-o"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="dentalBO.strEmployeePerState" pInputText placeholder="Permanent State">
+                </div>
+            </div>
+        </div>
+        <div class="row padding-5">
+            <div class="col-lg-2" style="text-align: left">
+                <div class="ui-inputgroup">
+                    <label>Employee's Current City Pincode</label>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ui-inputgroup" style="text-align: left">
+                    <span class="ui-inputgroup-addon">
+                        <i class="fa fa-address-book-o"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="dentalBO.lngEmployeeCurrentPinCode" pInputText placeholder="Pincode">
+                </div>
+            </div>
+            <div class="col-lg-2" style="text-align: left">
+                <div class="ui-inputgroup">
+                    <label>Employee's Permanent City Pincode</label>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ui-inputgroup" style="text-align: left">
+                    <span class="ui-inputgroup-addon">
+                        <i class="fa fa-address-book-o"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="dentalBO.lngEmployeePerPinCode" pInputText placeholder="Pincode">
+                </div>
+            </div>
+        </div>
+        <div class="row padding-5">
+            <div class="col-lg-3" style="text-align: center"></div>
+            <div class="col-lg-6" style="text-align: center">
+                <div style="padding: 20px;">
+                    <p-button (click)="save()" label="Save" styleClass="btn btn-primary"></p-button>
+                    <span style="padding: 3%"></span>
+                    <p-button (click)="clear()" label="Clear" styleClass="btn btn-primary"></p-button>
+                </div>
+            </div>
+            <div class="col-lg-3" style="text-align: center">
+            </div>
+        </div>
+    </p-fieldset>
+</div>
